@@ -1,13 +1,13 @@
 def greeting(name):
-    def greeting_decorator(method_to_be_called):
-        user_name = name
+    user_name = name
 
-        def wrapper(*args, **kwargs):
+    def greeting_decorator(method_to_be_called):
+        def greeting_wrapper(time):
             print("Hello {}!".format(user_name))
-            method_to_be_called(*args, **kwargs)
+            method_to_be_called(time)
             print("Good bye!")
 
-        return wrapper
+        return greeting_wrapper
 
     return greeting_decorator
 
