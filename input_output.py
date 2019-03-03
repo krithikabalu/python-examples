@@ -8,9 +8,9 @@ def who_do_you_know():
 
 def ask_user():
     person = input("Enter the name of the person\n")
-    if person.lower() in list_of_people:
+    if person.strip().lower() in list_of_people:                   # conditional operators are and, not, or 
         print("You know this person {}".format(person))
-    else:
+    else:                                                          # use elif in case of one more conditional branch
     	print("You do not know this person {}".format(person))
 
 list_of_people = who_do_you_know()
